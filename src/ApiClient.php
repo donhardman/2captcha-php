@@ -74,7 +74,7 @@ class ApiClient
 
         $url = $this->server . '/res.php';
 
-        if ($query) $url .= '?' . http_build_query($query);
+        if ($query) $url .= '?' . http_build_query($query, arg_separator: '&');
 
         curl_setopt_array($this->curl, [
             CURLOPT_URL            => $url,
